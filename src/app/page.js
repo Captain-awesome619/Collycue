@@ -4,7 +4,9 @@ import Policy from './components/CheckBox';
 import Carousel from './components/Carousel';
 import Faq from './components/Faq';
 import Footer from './components/Footer';
+
 export default function Home() {
+
   return (
     <main className="flex flex-col gap-[7rem] ">
 <div className="flex flex-col gap-[1.5rem] items-center justify-center mt-[4rem]">

@@ -6,11 +6,13 @@ import { CiCamera } from "react-icons/ci";
 import model2 from "../assests/display2.png"
 import model3 from "../assests/display3.png"
 import { IoCameraOutline } from "react-icons/io5";
+import { useRouter } from 'next/navigation';
 const Policy = () => {
   const [Checked,SetChecked] = useState(false)
   function checkbox() {
 SetChecked(!Checked)
   }
+  const Navigate  = useRouter()
   return (
     <div className="flex flex-row items-center justify-center gap-[4rem]">
     <Image
@@ -30,7 +32,7 @@ SetChecked(!Checked)
       ensuring your privacy is maintained, and there's no transmission to external servers.</h4>
     </div>
     <div  className= {Checked == false ? "flex flex-col gap-[2rem] opacity-[0.2]  z-[-1] duration-500" : "duration-500 flex flex-col gap-[2rem] "} >
-    <button disabled={!Checked} className="bg-primary3 flex items-center justify-center w-[200px] h-[50px] gap-[0.5rem] ">
+    <button onClick={()=>Navigate.push("/ProductPage")} disabled={!Checked} className="bg-primary3 flex items-center justify-center w-[200px] h-[50px] gap-[0.5rem] ">
     <IoCameraOutline className="text-white text-[25px]" />
     <text className="font-Gelasio text-white text-[14px] font-semibold">LIVE TRY</text>
     </button>
