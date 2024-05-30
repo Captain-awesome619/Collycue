@@ -1,6 +1,6 @@
-import display5 from "../assests/display5.png"
-import display6 from "../assests/display6.png"
-import display7 from "../assests/display7.png"
+import display5 from "../../../public/assests/display5.png"
+import display6 from "../../../public/assests/display6.png"
+import display7 from "../../../public/assests/display7.png"
 const CarouselData = [
     {
       id: 1,

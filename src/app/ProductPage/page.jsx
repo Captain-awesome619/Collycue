@@ -1,15 +1,19 @@
 "use client"
-import React,{useEffect,useState,useRef} from 'react'
-import capture from "../assests/Capture.png"
+import React,{useEffect,useState,useMemo} from 'react'
+import capture from "../../../public/assests/Capture.png"
 import Image from 'next/image'
-import reset from "../assests/reset.png"
+import reset from "../../../public/assests/reset.png"
+import { IoRefresh } from "react-icons/io5";
+import { GrSplit } from "react-icons/gr";
+import { MdOutlineDownloadForOffline } from "react-icons/md";
+
 const page = () => {
   const url = 'https://coilycue-api.onrender.com'
   const [Hair, SetHair] = useState([]);
   const [State, SetState] = useState([]);
   const [view, setView] = useState("hair");
   const [labell, SetLabel] = useState("");
-
+  const [display, setdisplay] = useState("");
     useEffect(() => {
         getHair()
       }, []);
@@ -25,15 +29,25 @@ SetState(name),
 SetLabel(name2)
 }
   return (
-    <div className="flex flex-row gap-[2rem]  justify-center mt-[2rem]">
-<div className="w-[496px] h-[517px] bg-[#D9D9D9] flex justify-center items-center">
-  {console.log(State)}
+    <div className='flex flex-row gap-[2rem]    justify-center mt-[2rem]'>
+
+<div  className={`w-[496px] h-[517px] bg-[#D9D9D9]  flex `}  style={{  backgroundImage : `url("${display}")`, backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',}}>
+<div className={display ? "flex flex-col gap-[1rem] justify-end items-end pb-[1rem] pr-[1rem] mx-auto w-full" : "hidden"}>
+
+< IoRefresh color='white' size={30} className="cursor-pointer"/>
+< GrSplit color='white' size={30} className="cursor-pointer"/>
+<a href={display}>< MdOutlineDownloadForOffline color='white' size={30} className="cursor-pointer"  href={display} /></a>
+</div>
+<div className={ display ? "hidden" : "top-[80%] left-[45%] relative cursor-pointer"}>
 <Image
 src ={capture}
 height ={60}
 width ={60}
-className="top-[40%] relative cursor-pointer"
+alt="model"
 />
+</div>
 </div>
 <div className="flex flex-col gap-[1rem] items-center justify-center">
 <div className="w-[600px] h-[50px] bg-primary1 flex flex-row items-center justify-center gap-[2rem]">
@@ -47,18 +61,19 @@ className="top-[40%] relative cursor-pointer"
 src ={reset}
 height ={60}
 width ={60}
+alt="model"
 className="cursor-pointer"
+onClick={()=>setdisplay('')}
 />
 </div>
   {Object.entries(Hair).map(([label , contents])=>(
-   <div className="" >
-
+   <div className="" onClick={()=>setdisplay(url.concat(contents[0].imageUrl))}>
   <button className="flex flex-col items-center justify-center p-[1rem]" onClick={()=>handleClick(contents,label)}   >
-
       <Image
-      src ={url.concat(contents[0].imageUrl)}
+      src ={ url.concat(contents[0].imageUrl) }
       height ={166}
       width ={177}
+      alt="model"
       className="rounded-md cursor-pointer"
       />
 <h3 className={labell === contents[0].hairstyle ? "text-[14px] font-Lato font-bold text-black" :  " text-[14px] font-Lato font-bold text-gray-400"}>{contents[0].hairstyle}</h3>
@@ -67,7 +82,6 @@ className="cursor-pointer"
   ))}
 </div>
 :
-
  <div className="grid grid-cols-4">
  <div className=" flex items-center justify-center">
 <Image
@@ -75,11 +89,12 @@ src ={reset}
 height ={60}
 width ={60}
 className="cursor-pointer"
+alt="model"
+onClick={()=>setdisplay('')}
 />
 </div>
-{State.length ? State.map((con) => (
-  <div className="flex flex-col items-center justify-center p-[1rem]">
-    {console.log(con)}
+{State.length ? State.map((con,key) => (
+  <div className="flex flex-col items-center justify-center p-[1rem]" onClick={()=>setdisplay(url.concat(con.imageUrl))}>
     <Image
       src ={url.concat(con.imageUrl)}
       height ={166}
@@ -88,7 +103,6 @@ className="cursor-pointer"
       />
       <h3 className="text-[14px] font-Lato font-bold text-black">{con.color}</h3>
   </div>
-
 )) :<div className="  w-full"> <h3 className="text-center text-[15px] font-Lato text-black font-bold">PLEASE PICK AN HAIRSTYLE</h3></div> }
 </div>
 }
@@ -96,5 +110,4 @@ className="cursor-pointer"
     </div>
   )
 }
-
 export default page

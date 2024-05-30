@@ -1,7 +1,7 @@
 import React from 'react'
 import { IoIosSearch } from "react-icons/io";
 import Image from 'next/image';
-import logo from "../assests/logo.png"
+import logo from "../../../public/assests/logo.png"
 export const Navbar = () => {
   return (
     <div className="w-full flex flex-row items-center justify-around bg-primary1 py-[1rem]" >

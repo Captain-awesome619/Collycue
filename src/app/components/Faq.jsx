@@ -1,8 +1,9 @@
 import React from 'react'
 import Accordion from './Accordion'
+
 const Faq = () => {
   return (
-    <div className="flex flex-col items-center justify-center ">
+    <div className='flex flex-col items-center justify-centerbg-[url("/assests/display2.png")]'>
 <div className="flex flex-col justify-center ">
 <Accordion
         title="Is there an app to change your hair color?"

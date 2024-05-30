@@ -1,10 +1,10 @@
 "use client"
 import React,{useState} from 'react'
 import Image from 'next/image'
-import model from "../assests/display1.png"
+import model from "../../../public/assests/display1.png"
 import { CiCamera } from "react-icons/ci";
-import model2 from "../assests/display2.png"
-import model3 from "../assests/display3.png"
+import model2 from "../../../public/assests/display2.png"
+import model3 from "../../../public/assests/display3.png"
 import { IoCameraOutline } from "react-icons/io5";
 import { useRouter } from 'next/navigation';
 const Policy = () => {
