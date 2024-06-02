@@ -15,6 +15,8 @@ const Page = () => {
   const [labell, SetLabel] = useState("");
   const [display, setdisplay] = useState();
   const [upload, setupload] = useState(false);
+  const [options, setoptions] = useState(false);
+  const [style, setstyle] = useState(false);
     useEffect(() => {
         getHair()
       }, []);
@@ -31,16 +33,27 @@ SetLabel(name2)
 }
 const fileInput = useRef(null)
 const picInput = useRef(null)
-
-
 const handleClick2 = event => {
-  fileInput.current.click();
+  if (!style) {
+    alert('PLEASE PICK AN HAIRTYLE')
+  }else{
+  fileInput.current.click();}
 };
 const handleClick3 = event => {
-  picInput.current.click();
+  if (!style) {
+    alert('PLEASE PICK AN HAIRTYLE')
+  }else{
+  picInput.current.click();}
 };
+function handleClick4() {
+  setupload(!upload),
+  setoptions(!options)
+  }
+  const handleClick5 = (event) =>{
+    setstyle(event.target.innerText)
+  }
   return (
-    <div className='flex flex-col lg:flex-row gap-[2rem] items-center lg:items-start  justify-center mt-[2rem]'>
+    <div className='flex flex-col lg:flex-row gap-[2rem] lg:gap-[0rem]  items-center lg:items-start  justify-around mt-[2rem]'>
 <div  className={` w-[300px] h-[250px] lg:w-[500px] lg:h-[517px] bg-[#D9D9D9]  flex `}  style={{  backgroundImage : `url("${display}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',}}>
@@ -51,11 +64,11 @@ const handleClick3 = event => {
 </div>
 <div className={ display ? "hidden" : " w-full items-center justify-end  flex flex-col gap-[1rem] "}>
 <div className={ upload == false ? "hidden" : "pl-[0.5rem] flex flex-row gap-[1rem] items-center justify-center"}>
-<button className="font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg  cursor-pointer" onClick={handleClick3}>
+<button  className={ style ? "font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg  cursor-pointer" : "cursor-not-allowed opacity-[0.2] font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg duration-500"} onClick={handleClick3}>
   Take Picture
 <input type="file" accept="image/*" capture="user" className="hidden" ref={picInput}/>
 </button>
-<button className="font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg cursor-pointer" onClick={handleClick2}>
+<button  className={ style ? "font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg  cursor-pointer" : "cursor-not-allowed opacity-[0.2] font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg  duration-500"} onClick={handleClick2}>
 <input type="file" ref={fileInput} className="hidden"  />
   Upload Picture
   </button>
@@ -65,11 +78,12 @@ src ={capture}
 height ={60}
 width ={60}
 alt="model"
-onClick={()=> setupload(!upload)}
+onClick={handleClick4}
 className="cursor-pointer"
 />
 </div>
 </div>
+{options == false ?
 <div className="flex flex-col gap-[1rem] items-center justify-center">
 <div className="w-[200px] h-[50px] lg:w-[600px] bg-primary1 flex flex-row items-center justify-center gap-[2rem]">
 <h3 className={view === "hair" ?"font-Gelasio font-bold text-[18px] text-black cursor-pointer underline underline-offset-4" :"font-Gelasio font-bold text-[18px] text-black cursor-pointer"} onClick={() =>setView("hair")}>Hairstyle</h3>
@@ -124,8 +138,22 @@ onClick={()=>setdisplay('')}/>
 )) :<div className="  w-full"> <h3 className="text-center text-[15px] font-Lato text-black font-bold">PLEASE PICK AN HAIRSTYLE</h3></div> }
 </div>
 }
-
 </div>
+:
+<div className="grid gap-4 grid-cols-4">
+<button  className="font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white"onClick={handleClick5}>undercut</button>
+<button className="font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white" onClick={handleClick5}>undercut</button>
+<button className="font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white" onClick={handleClick5}>undercut</button>
+<button className="font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white" onClick={handleClick5}>undercut</button>
+<button className="font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white" onClick={handleClick5}>undercut</button>
+<button className="font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white" onClick={handleClick5}>undercut</button>
+<button className="font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white" onClick={handleClick5}>undercut</button>
+<button className="font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white" onClick={handleClick5}>undercut</button>
+<button className="font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white" onClick={handleClick5}>undercut</button>
+<button className="font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white" onClick={handleClick5}>undercut</button>
+{console.log(style)}
+</div>
+}
     </div>
   )
 }
