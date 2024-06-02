@@ -40,8 +40,8 @@ const handleClick3 = event => {
   picInput.current.click();
 };
   return (
-    <div className='flex flex-row gap-[2rem]  justify-center mt-[2rem]'>
-<div  className={`w-[500px] h-[517px] bg-[#D9D9D9]  flex `}  style={{  backgroundImage : `url("${display}")`, backgroundSize: 'cover',
+    <div className='flex flex-col lg:flex-row gap-[2rem] items-center lg:items-start  justify-center mt-[2rem]'>
+<div  className={` w-[300px] h-[250px] lg:w-[500px] lg:h-[517px] bg-[#D9D9D9]  flex `}  style={{  backgroundImage : `url("${display}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',}}>
 <div className={display ? "flex flex-col gap-[1rem] justify-end items-end pb-[1rem] pr-[1rem] mx-auto w-full" : "hidden"}>
@@ -71,7 +71,7 @@ className="cursor-pointer"
 </div>
 </div>
 <div className="flex flex-col gap-[1rem] items-center justify-center">
-<div className="w-[600px] h-[50px] bg-primary1 flex flex-row items-center justify-center gap-[2rem]">
+<div className="w-[200px] h-[50px] lg:w-[600px] bg-primary1 flex flex-row items-center justify-center gap-[2rem]">
 <h3 className={view === "hair" ?"font-Gelasio font-bold text-[18px] text-black cursor-pointer underline underline-offset-4" :"font-Gelasio font-bold text-[18px] text-black cursor-pointer"} onClick={() =>setView("hair")}>Hairstyle</h3>
 <h3 className={view === "color" ?"font-Gelasio font-bold text-[18px] text-black cursor-pointer underline underline-offset-4" :"font-Gelasio font-bold text-[18px] text-black cursor-pointer"} onClick={() =>setView("color")}>Colours</h3>
 </div>
@@ -90,12 +90,10 @@ onClick={()=>setdisplay('')}
   {Object.entries(Hair).map(([label , contents],id)=>(
 <div key={id} className="" onClick={()=>setdisplay(url.concat(contents[0].imageUrl))}>
   <button className="flex flex-col items-center justify-center p-[1rem]" onClick={()=>handleClick(contents,label)}   >
-      <Image
+      <img
       src ={ url.concat(contents[0].imageUrl) }
-      height ={166}
-      width ={177}
       alt="model"
-      className="rounded-md cursor-pointer"/>
+      className="rounded-md cursor-pointer h-[70px] w-[70px] lg:w-[160px] lg:h-[160px]"/>
 <h3 className={labell === contents[0].hairstyle ? "text-[14px] font-Lato font-bold text-black" :  " text-[14px] font-Lato font-bold text-gray-400"}>{contents[0].hairstyle}</h3>
 </button>
 </div>
