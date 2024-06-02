@@ -7,7 +7,7 @@ import { IoRefresh } from "react-icons/io5";
 import { GrSplit } from "react-icons/gr";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
 import display6 from "../../../public/assests/display6.png"
-const page = () => {
+const Page = () => {
   const url = 'https://coilycue-api.onrender.com'
   const [Hair, SetHair] = useState([]);
   const [State, SetState] = useState([]);
@@ -87,8 +87,8 @@ className="cursor-pointer"
 onClick={()=>setdisplay('')}
 />
 </div>
-  {Object.entries(Hair).map(([label , contents])=>(
-<div className="" onClick={()=>setdisplay(url.concat(contents[0].imageUrl))}>
+  {Object.entries(Hair).map(([label , contents],id)=>(
+<div key={id} className="" onClick={()=>setdisplay(url.concat(contents[0].imageUrl))}>
   <button className="flex flex-col items-center justify-center p-[1rem]" onClick={()=>handleClick(contents,label)}   >
       <Image
       src ={ url.concat(contents[0].imageUrl) }
@@ -131,4 +131,4 @@ onClick={()=>setdisplay('')}/>
     </div>
   )
 }
-export default page
+export default Page
