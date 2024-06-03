@@ -1,6 +1,8 @@
+import React,{Suspense} from 'react'
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./components/Navbar";
+import Loading from './components/loading';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -10,13 +12,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="">
+    <html lang="en" className="overflow-x-hidden">
+
       <body className={inter.className}>
+
       <div className="w-screen ">
       <Navbar />
       </div>
+
         {children}
+
         </body>
+       
     </html>
   );
 }

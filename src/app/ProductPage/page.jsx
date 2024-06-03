@@ -1,12 +1,12 @@
 "use client"
-import React,{useEffect,useState,useMemo, useRef } from 'react'
+import React,{useEffect,useState, useRef } from 'react'
 import capture from "../../../public/assests/Capture.png"
 import Image from 'next/image'
 import reset from "../../../public/assests/reset.png"
 import { IoRefresh } from "react-icons/io5";
 import { GrSplit } from "react-icons/gr";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
-import display6 from "../../../public/assests/display6.png"
+import Loading from '../components/loading'
 const Page = () => {
   const url = 'https://coilycue-api.onrender.com'
   const [Hair, SetHair] = useState([]);
@@ -54,6 +54,7 @@ function handleClick4() {
   }
   return (
     <div className='flex flex-col lg:flex-row gap-[2rem] lg:gap-[0rem]  items-center lg:items-start  justify-around mt-[2rem]'>
+
 <div  className={` w-[300px] h-[250px] lg:w-[500px] lg:h-[517px] bg-[#D9D9D9]  flex `}  style={{  backgroundImage : `url("${display}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',}}>
@@ -83,6 +84,7 @@ className="cursor-pointer"
 />
 </div>
 </div>
+
 {options == false ?
 <div className="flex flex-col gap-[1rem] items-center justify-center">
 <div className="w-[200px] h-[50px] lg:w-[600px] bg-primary1 flex flex-row items-center justify-center gap-[2rem]">
