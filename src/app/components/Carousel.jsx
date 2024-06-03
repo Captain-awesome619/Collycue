@@ -16,8 +16,8 @@ SetView(View - 1)
   return (
     <div className="flex flex-col gap-[2rem]">
     <h2 className="font-Gelasio font-semibold text-[18px] lg:text-[24px]  text-primary3 text-center">Try On Hair-Styles Virtually With Just 3 Easy Steps</h2>
-    <div className="w-full h-full bg-primary2 pb-[2rem] lg:pb-0">
-{CarouselData?.map((data , id) => <div key={id}>
+    <div className="w-full h-full pb-[2rem] lg:pb-0">
+{CarouselData?.map((data , id) => <div className=" bg-primary2" key={id}>
   {
     data.id === View ?  <div className=" relative left-[0%] flex flex-col  items-center gap-[1rem] lg:gap-[4rem]  duration-1000 lg:flex-row">
  <Image
