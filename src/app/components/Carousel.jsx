@@ -24,13 +24,11 @@ const imageLoader = ({ src, width, quality }) => {
 {CarouselData?.map((data , id) => <div className="" key={id}>
   {
     data.id === View ?  <div className=" relative left-[0%] flex flex-col  bg-primary2  items-center gap-[1rem] lg:gap-[4rem] duration-75   lg:flex-row">
- <Image
-src={data.picture}
- piority ={true}
-width = {500}
-height = {500}
-alt ="sideimage"
- />
+
+<div style={{backgroundImage : `url("${data.picture}")`, backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',}} className="lg:w-[600px] h-[300px] w-screen"></div>
+
   <div className=" grid gap-[0.5rem] lg:gap-[2rem] w-[300px]   lg:w-[650px]">
   <div className="flex flex-row items-center justify-between">
   <h1 className="font-Gelasio font-semibold text-white text-[40px] lg:text-[100px]">{data.number}</h1>
