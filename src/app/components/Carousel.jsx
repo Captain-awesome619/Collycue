@@ -17,13 +17,13 @@ SetView(View - 1)
     <div className="flex flex-col gap-[2rem]">
     <h2 className="font-Gelasio font-semibold text-[18px] lg:text-[24px]  text-primary3 text-center">Try On Hair-Styles Virtually With Just 3 Easy Steps</h2>
     <div className="w-full h-full bg-primary2 pb-[2rem] lg:pb-0">
-{CarouselData.map((data , id) => <div key={id}>
+{CarouselData?.map((data , id) => <div key={id}>
   {
     data.id === View ?  <div className=" relative left-[0%] flex flex-col  items-center gap-[1rem] lg:gap-[4rem]  duration-1000 lg:flex-row">
  <Image
 src={data.picture}
-width = {600}
-height = {100}
+width = {500}
+height = {500}
 alt ="sideimage"
  />
   <div className=" grid gap-[0.5rem] lg:gap-[2rem] w-[300px]   lg:w-[650px]">
@@ -32,7 +32,6 @@ alt ="sideimage"
   <div className="flex flex-row items-center justify-center gap-[1rem]">
   <button onClick={Backward}  disabled={View == 1}><FaAngleLeft size={20} className={ View == 1 ? "text-[#000000] cursor-not-allowed " : " cursor-pointer text-white"} /></button>
   <button onClick={Forward}  disabled={View == 3}><FaAngleRight size={20}   className={ View == 3 ? "text-[#000000] cursor-not-allowed " : " cursor-pointer text-white"}  /></button>
-{console.log(View)}
   </div>
   </div>
   <h3 className="font-Gelasio font-semibold text-white text-[15px] lg:text-[20px]">
@@ -44,7 +43,7 @@ alt ="sideimage"
   </div>
     </div>
     :
-    <div className="relative left-[-10%] ">
+    <div className="relative left-[-5%] ">
        </div>
   }
 </div> )}
