@@ -27,7 +27,7 @@ const imageLoader = ({ src, width, quality }) => {
 
 <div style={{backgroundImage : `url("${data.picture}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',}} className="lg:w-[600px] h-[300px] w-screen"></div>
+    backgroundRepeat: 'no-repeat',}} className="lg:w-[600px] lg:h-[300px] h-[200px] w-screen"></div>
 
   <div className=" grid gap-[0.5rem] lg:gap-[2rem] w-[300px]   lg:w-[650px]">
   <div className="flex flex-row items-center justify-between">
