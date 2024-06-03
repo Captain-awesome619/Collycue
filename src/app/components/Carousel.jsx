@@ -9,10 +9,10 @@ const Carousel = () => {
   const [View,SetView] = useState(1)
 
 function Forward() {
-SetView(View + 1)
+SetView(prevview => prevview + 1)
 }
 function Backward() {
-SetView(View - 1)
+SetView(prevview => prevview - 1)
 }
 const imageLoader = ({ src, width, quality }) => {
   return <Loading/>
@@ -23,7 +23,7 @@ const imageLoader = ({ src, width, quality }) => {
     <div className="w-screen h-max  lg:pb-0">
 {CarouselData?.map((data , id) => <div className=" bg-primary2" key={id}>
   {
-    data.id === View ?  <div className=" relative left-[0%] flex flex-col  items-center gap-[1rem] lg:gap-[4rem]  duration-500 lg:flex-row">
+    data.id === View ?  <div className=" relative left-[0%] flex flex-col  items-center gap-[1rem] lg:gap-[4rem] duration-500   lg:flex-row">
  <Image
 src={data.picture}
  piority ={true}
@@ -50,7 +50,7 @@ className="lg:w-[600px] w-full"
   </div>
     </div>
     :
-    <div className="relative left-[-5%] ">
+    <div className="relative left-[-40%] ">
        </div>
   }
 </div> )}
