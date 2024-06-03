@@ -23,7 +23,7 @@ const imageLoader = ({ src, width, quality }) => {
     <div className="w-screen h-max  lg:pb-0">
 {CarouselData?.map((data , id) => <div className=" bg-primary2" key={id}>
   {
-    data.id === View ?  <div className=" relative left-[0%] flex flex-col  items-center gap-[1rem] lg:gap-[4rem] duration-500   lg:flex-row">
+    data.id === View ?  <div className=" relative left-[0%] flex flex-col  items-center gap-[1rem] lg:gap-[4rem] duration-75   lg:flex-row">
  <Image
 src={data.picture}
  piority ={true}
