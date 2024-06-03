@@ -14,7 +14,7 @@ const CarouselData = [
             picture: display6,
             number:  "02",
             text:  "Try Out Coilycue Hair Styles and Colors!",
-            text2:  "Click on the hairstyle icons to explore options like Bob, Locks, Bangs, Tight curls, and more. Feel free to try them all! Use the slider to see how your hair style changes in real time.",
+            text2:  "Click on the hairstyle icons to explore options like Bob, Locks, Bangs, Tight curls, and more. Feel free to try them all!",
           },
           {
             id: 3,

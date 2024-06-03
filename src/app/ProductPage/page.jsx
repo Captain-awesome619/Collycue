@@ -64,7 +64,7 @@ function handleClick4() {
 </div>
 <div className={ display ? "hidden" : " w-full items-center justify-end  flex flex-col gap-[1rem] "}>
 <div className={ upload == false ? "hidden" : "pl-[0.5rem] flex flex-row gap-[1rem] items-center justify-center"}>
-<button  className={ style ? "font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg  cursor-pointer" : "cursor-not-allowed opacity-[0.2] font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg duration-500"} onClick={handleClick3}>
+<button  className={ style ? "flex lg:hidden font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg  cursor-pointer" : "cursor-not-allowed opacity-[0.2] font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg duration-500"} onClick={handleClick3}>
   Take Picture
 <input type="file" accept="image/*" capture="user" className="hidden" ref={picInput}/>
 </button>
