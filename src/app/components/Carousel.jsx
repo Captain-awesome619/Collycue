@@ -16,15 +16,16 @@ SetView(View - 1)
   return (
     <div className="flex flex-col gap-[2rem]">
     <h2 className="font-Gelasio font-semibold text-[18px] lg:text-[24px]  text-primary3 text-center">Try On Hair-Styles Virtually With Just 3 Easy Steps</h2>
-    <div className="w-full h-full pb-[2rem] lg:pb-0">
+    <div className="lg:w-full lg:h-full h-fit w-screen pb-[2rem] lg:pb-0">
 {CarouselData?.map((data , id) => <div className=" bg-primary2" key={id}>
   {
-    data.id === View ?  <div className=" relative left-[0%] flex flex-col  items-center gap-[1rem] lg:gap-[4rem]  duration-1000 lg:flex-row">
+    data.id === View ?  <div className=" relative left-[0%] flex flex-col  items-center gap-[1rem] lg:gap-[4rem]  duration-500 lg:flex-row">
  <Image
 src={data.picture}
-width = {500}
-height = {500}
+width = {300}
+height = {300}
 alt ="sideimage"
+className="lg:w-[600px] w-full"
  />
   <div className=" grid gap-[0.5rem] lg:gap-[2rem] w-[300px]   lg:w-[650px]">
   <div className="flex flex-row items-center justify-between">
