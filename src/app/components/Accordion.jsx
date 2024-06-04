@@ -30,7 +30,7 @@ const Accordion = ({ title, answer }) => {
             : "grid-rows-[0fr] opacity-0"
         }`}
       >
-        <div className="overflow-hidden pt-[0.5rem] text-[13px] font-Gelasio font-semibold text-primary4 w-[80%] lg:w-[70%] ">{answer}</div>
+        <div className="overflow-hidden pt-[0.5rem] text-[13px] pl-[0.5rem] lg:pl-[0rem] font-Gelasio font-semibold text-primary4 w-[80%] lg:w-[70%] ">{answer}</div>
       </div>
     </div>
   );
