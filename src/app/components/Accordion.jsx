@@ -12,7 +12,7 @@ const Accordion = ({ title, answer }) => {
         onClick={() => setAccordionOpen(!accordionOpen)}
         className="flex flex-row justify-between w-[90%]"
       >
-        <span className="lg:text-[16px] text-left text-[14px] font-Gelasio font-semibold text-primary4">{title}</span>
+        <span className="lg:text-[16px] pl-[0.5rem] lg:pl-[0rem] text-left text-[14px] font-Gelasio font-semibold text-primary4">{title}</span>
         <div>
           <MdArrowDropDown
 

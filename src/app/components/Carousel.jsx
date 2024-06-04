@@ -23,11 +23,11 @@ const imageLoader = ({ src, width, quality }) => {
     <div className="w-screen h-max  lg:pb-0">
 {CarouselData?.map((data , id) => <div className="" key={id}>
   {
-    data.id === View ?  <div className=" relative left-[0%] flex flex-col  bg-primary2  items-center gap-[1rem] lg:gap-[4rem] duration-500   lg:flex-row">
+    data.id === View ?  <div className=" relative left-[0%] flex flex-col lg:h-max h-[400px]  bg-primary2  items-center gap-[1rem] lg:gap-[4rem] duration-500   lg:flex-row">
 
 <div style={{backgroundImage : `url("${data.picture}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',}} className="lg:w-[600px] lg:h-[300px] h-[250px] w-screen"></div>
+    backgroundRepeat: 'no-repeat',}} className="lg:w-[600px] lg:h-[400px] h-[250px] w-screen"></div>
 
   <div className=" grid gap-[0.5rem] lg:gap-[2rem] w-[300px]   lg:w-[650px]">
   <div className="flex flex-row items-center justify-between">
@@ -40,7 +40,7 @@ const imageLoader = ({ src, width, quality }) => {
   <h3 className="font-Gelasio font-semibold text-white text-[15px] lg:text-[20px]">
 {data.text}
   </h3>
-  <h4 className="font-Lato font-semibold text-white text-[12px] pb-[0.5rem] lg:text-[14px]">
+  <h4 className="font-Lato font-semibold text-white text-[12px] pb-[0.7rem] lg:text-[14px]">
 {data.text2}
   </h4>
   </div>
