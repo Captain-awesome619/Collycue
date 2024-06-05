@@ -90,15 +90,15 @@ setcompare(false)
   return (
 <div className='flex flex-col  lg:flex-row gap-[2rem] lg:gap-[0rem]  items-center lg:items-start  lg:justify-around mt-[2rem]'>
 { compare == true ? <div   className=" flex items-center justify-center">
-<div className="w-full h-full relative"onTouchEnd={handleMouseUp} onMouseUp={handleMouseUp}>
+<div className="lg:w-full w-screen h-full relative" onPointerUp={handleMouseUp} onMouseUp={handleMouseUp}>
       <div
         className="relative  aspect-[50/50] m-auto overflow-hidden select-none lg:w-[500px] bg-[#D9D9D9]  w-[80%] h-[350px]  lg:h-[517px]"
         onMouseMove={handleMove}
         onMouseDown={handleMouseDown}
-onTouchStart={handleMouseDown}
-onTouchMove={handleMove}
+onPointerDown={handleMouseDown}
+onPointer={handleMove}
       >
-       <div  className={ `aspect-[50/80] lg:w-[500px] lg:h-[517px]   flex `  }  style={{  backgroundImage : `url("${display.second}")`, backgroundSize: 'cover',
+       <div  className={ `lg:aspect-[50/80] aspect-[70/80] lg:w-[500px] lg:h-[517px]   flex `  }  style={{  backgroundImage : `url("${display.second}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',}}>
 </div>
@@ -107,7 +107,7 @@ onTouchMove={handleMove}
           className={"absolute top-0 left-0 right-0 w-full aspect-[50/80] lg:w-[500px] lg:h-[517px] m-auto overflow-hidden select-none"}
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
         >
-<div  className={ `   aspect-[50/80] lg:w-[500px] lg:h-[517px] flex ` }  style={{  backgroundImage : `url("${display.first}")`, backgroundSize: 'cover',
+<div  className={ `   aspect-[70/80] lg:aspect-[50/80] lg:w-[500px] lg:h-[517px] flex ` }  style={{  backgroundImage : `url("${display.first}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',}}>
 </div>
@@ -121,7 +121,7 @@ onTouchMove={handleMove}
           <div className="bg-green-400 absolute rounded-full h-3 w-3 -left-1 top-[calc(50%-5px)]" />
         </div>
       </div>
-      <div className={compare == true ? "flex absolute left-[90%] bottom-[5%] flex-col gap-[1rem] " : "hidden"}>
+      <div className={compare == true ? "flex absolute left-[80%] bottom-[5%] lg:left-[90%] lg:bottom-[5%] flex-col gap-[1rem] " : "hidden"}>
 < IoRefresh color='white' size={30} className="cursor-pointer" onClick={()=>setdisplay({...display ,second : ""})}/>
 < FaRegSquareFull  color='white' size={30} className="cursor-pointer" onClick={Reset2}/>
 <a href={display.first}>< MdOutlineDownloadForOffline color='white' size={30} className="cursor-pointer"   /></a>
