@@ -96,7 +96,7 @@ setcompare(false)
         onMouseMove={handleMove}
         onMouseDown={handleMouseDown}
 onPointerDown={handleMouseDown}
-onPointer={handleMove}
+onPointerMove={handleMove}
       >
        <div  className={ `lg:aspect-[50/80] aspect-[70/80] lg:w-[500px] lg:h-[517px]   flex `  }  style={{  backgroundImage : `url("${display.second}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
