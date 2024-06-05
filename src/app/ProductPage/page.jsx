@@ -63,6 +63,7 @@ function handleClick4() {
   }
 
   const handleMove = (event) => {
+    event.preventDefault();
     if (!isDragging) return;
     const rect = event.currentTarget.getBoundingClientRect();
     const x = Math.max(0, Math.min(event.clientX - rect.left, rect.width));
@@ -113,7 +114,7 @@ onPointerMove={handleMove}
 </div>
         </div>
         <div
-          className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"
+          className="touch-none absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"
           style={{
             left: `calc(${sliderPosition}% - 1px)`,
           }}
