@@ -302,11 +302,11 @@ className="cursor-pointer"
 </div>
 
 }
-<h3 className="font-Gelasio text-[16px] text-red-600 font-bold mb-[1rem] flex items-center justify-center">{Erro22}</h3>
+<h3 className={options == true ? "font-Gelasio text-[16px] text-red-600 font-bold mb-[1rem] flex items-center justify-center" : "hidden"}>{Erro22}</h3>
 <div className="flex flex-col items-center justify-center">
 </div>
 {options == false ?
-<div className="flex flex-col gap-[1rem] items-center justify-center">
+<div className="flex flex-col mt-[2rem] lg:mt-[0rem] gap-[1rem] items-center justify-center">
 <div className="w-[90%] h-[50px] lg:w-[600px] bg-primary1 flex flex-row items-center justify-center gap-[2rem]">
 <h3 className={view === "hair" ?"font-Gelasio font-bold text-[18px] text-black cursor-pointer underline underline-offset-4" :"font-Gelasio font-bold text-[18px] text-black cursor-pointer"} onClick={() =>setView("hair")}>Hairstyle</h3>
 <h3 className={view === "color" ?"font-Gelasio font-bold text-[18px] text-black cursor-pointer underline underline-offset-4" :"font-Gelasio font-bold text-[18px] text-black cursor-pointer"} onClick={() =>setView("color")}>Colours</h3>
