@@ -46,7 +46,7 @@ const imageLoader = ({ src, width, quality }) => {
   </div>
     </div>
     :
-    <div className="relative left-[-40%] ">
+    <div className="hidden ">
        </div>
   }
 </div> )}

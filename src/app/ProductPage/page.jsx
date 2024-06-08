@@ -15,6 +15,8 @@ import Link from 'next/link'
 const Page = () => {
   const LINK = "https://www.ailabapi.com/api/portrait/effects/hairstyle-editor-pro"
   const url = 'https://coilycue-api.onrender.com'
+
+  let secondopt
   const [Hair, SetHair] = useState([]);
   const [State, SetState] = useState([]);
   const [view, setView] = useState("hair");
@@ -22,7 +24,7 @@ const Page = () => {
   const [display, setdisplay] = useState(
     {
       first : "",
-      second : ""
+      second : secondopt
     });
   const [upload, setupload] = useState(false);
   const [options, setoptions] = useState(false);
@@ -39,6 +41,7 @@ const Page = () => {
   const [data22, setdata22] = useState("");
   const [sucess, setsucess] = useState(false);
   const [loading, setloading] = useState(false);
+  const [cap, setcap] = useState("");
 
 
   let response
@@ -180,20 +183,22 @@ setsucess(false)
 setupload(false)
 }
 
+let firstopt
   return (
 <div className='flex flex-col  lg:flex-row gap-[rem] lg:gap-[3rem]  items-center lg:items-start  justify-center  mt-[2rem]'>
 { options == true ?
+
 <FaArrowLeftLong
 size={30}
 color='green'
-className="cursor-pointer hidden lg:flex"
+className="cursor-pointer hidden lg:flex  ml-[1rem] "
 onClick={handleClick5}
 />
 :<Link href="/">
 <FaArrowLeftLong
 size={30}
 color='green'
-className="cursor-pointer hidden lg:flex"
+className="cursor-pointer hidden lg:flex  ml-[1rem]"
 />
 </Link>
 }
@@ -207,18 +212,18 @@ className="cursor-pointer hidden lg:flex"
 onPointerDown={handleMouseDown}
 onPointerMove={handleMove}
       >
-       <div  className={ `lg:aspect-[50/80] aspect-[70/80] lg:w-[500px] lg:h-[517px]   flex `  }  style={{  backgroundImage : `url("${display.second}")`, backgroundSize: 'cover',
+       <div  className={ `lg:aspect-[50/80] aspect-[70/80] lg:w-[500px] lg:h-[517px]   flex `  }  style={display.second? {  backgroundImage : `url("${display.second}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',}}>
+    backgroundRepeat: 'no-repeat',} : {backgroundImage : `url("${url.concat(State[0].imageUrl)}")`, backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'}}>
 </div>
-
+{console.log(State[0].imageUrl)}
         <div
           className={"absolute top-0 left-0 right-0 w-full aspect-[50/80] lg:w-[500px] lg:h-[517px] m-auto overflow-hidden select-none"}
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
         >
-<div  className={ `   aspect-[70/80] lg:aspect-[50/80] lg:w-[500px] lg:h-[517px] flex ` }  style={data22 ? {  backgroundImage : `url("${data22.images[0]}")`, backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',} : {backgroundImage : `url("${display.first}")`, backgroundSize: 'cover',
+<div  className={ `   aspect-[70/80] lg:aspect-[50/80] lg:w-[500px] lg:h-[517px] flex ` }  style={ {backgroundImage : `url("${display.first}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'}}>
 </div>
@@ -263,7 +268,7 @@ className="cursor-pointer flex lg:hidden pr-[0.5rem]"
     backgroundRepeat: 'no-repeat'}}>
 
 
-<div className={display.first ? "flex flex-col gap-[1rem] justify-end items-end pb-[1rem] pr-[1rem] mx-auto w-full" : "hidden"}>
+<div className={display.first ? "flex flex-col gap-[1rem] justify-end items-end pb-[1.5rem] pr-[1rem] mx-auto w-full" : "hidden"}>
 < GrSplit color='white' size={30} className={data22 ? "hidden" : "cursor-pointer"} onClick={()=> setcompare(!compare)}/>
 { data22 ?<a href={data22.image}>< MdOutlineDownloadForOffline color='white' size={30} className="cursor-pointer"   /></a>
  :<a  href={display.first}>< MdOutlineDownloadForOffline color='white' size={30} className="cursor-pointer"   /></a>
@@ -293,7 +298,7 @@ height ={60}
 width ={60}
 alt="model"
 onClick={handleClick4}
-className="cursor-pointer"
+className="cursor-pointer mb-[0.5rem]"
 />
 }
 {console.log(file22)}
@@ -307,8 +312,8 @@ className="cursor-pointer"
 <div className="flex flex-col items-center justify-center">
 </div>
 {options == false ?
-<div className="flex flex-col mt-[2rem] lg:mt-[0rem] gap-[1rem] items-center justify-center">
-<div className="w-[90%] h-[50px] lg:w-[600px] bg-primary1 flex flex-row items-center justify-center gap-[2rem]">
+<div className="flex flex-col mt-[2rem] lg:mt-[0rem] gap-[1rem] items-center justify-center w-[100%]">
+<div className="w-[95%] h-[50px] lg:w-[100%] bg-primary1 flex flex-row items-center justify-center gap-[2rem]">
 <h3 className={view === "hair" ?"font-Gelasio font-bold text-[18px] text-black cursor-pointer underline underline-offset-4" :"font-Gelasio font-bold text-[18px] text-black cursor-pointer"} onClick={() =>setView("hair")}>Hairstyle</h3>
 <h3 className={view === "color" ?"font-Gelasio font-bold text-[18px] text-black cursor-pointer underline underline-offset-4" :"font-Gelasio font-bold text-[18px] text-black cursor-pointer"} onClick={() =>setView("color")}>Colours</h3>
 </div>
@@ -331,8 +336,10 @@ onClick={Reset}
       src ={ url.concat(contents[0].imageUrl) }
       alt="model"
       className="rounded-md cursor-pointer h-[100px] w-[100px] lg:w-[160px] lg:h-[160px]"/>
+
 <h3 className={labell === contents[0].hairstyle ? "text-[14px] font-Lato font-bold text-black" :  " text-[14px] font-Lato font-bold text-gray-400"}>{contents[0].hairstyle}</h3>
 </button>
+
 </div>
 )
   )}
@@ -358,6 +365,7 @@ onClick={Reset}/>
       width ={177}
       className="rounded-md cursor-pointer"
       />
+
       <h3 className="text-[14px] font-Lato font-bold text-black">{con.color}</h3>
   </div>
 :
@@ -368,6 +376,7 @@ onClick={Reset}/>
       width ={177}
       className="rounded-md cursor-pointer"
       />
+
       <h3 className="text-[14px] font-Lato font-bold text-black">{con.color}</h3>
   </div>
 }

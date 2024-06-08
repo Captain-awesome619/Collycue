@@ -26,7 +26,7 @@ SetChecked(!Checked)
     <div className="flex flex-row gap-[0.5rem] justify-center  ">
     <input type="checkbox" className="w-[100px] h-[30px] text-primary3 cursor-pointer" onClick={checkbox}   />
     {console.log(Checked)}
-    <h4 className="font-Lato leading-[30px] font-semibold  text-[13px] text-primary4 ">I consent to the scanning of my face and the processing of my image. When you engage with Coilycle's Try On
+    <h4 className="font-Lato leading-[30px] font-semibold  text-[13px] text-primary4 ">I consent to the scanning of my face and the processing of my image. When you engage with Coilycue's Try On
        Live or Use Photo virtual try-on features, you can trust that your photo data is handled with utmost security.
        It's processed and stored exclusively on your device,
       ensuring your privacy is maintained, and there's no transmission to external servers.</h4>

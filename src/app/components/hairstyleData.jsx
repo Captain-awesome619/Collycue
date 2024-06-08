@@ -24,6 +24,7 @@ export const hairstyleDataMen = [
     { id: 23, label: 'Middle-parted' },
   ];
   export const hairstyleDataFemale = [
+    { id: 0, label: '' },
     { id: 1, label: 'ShortPixieWithShavedSides' },
     { id: 2, label: 'ShortNeatBob' },
     { id: 3, label: 'DoubleBun' },
@@ -55,6 +56,7 @@ export const hairstyleDataMen = [
   ];
 
   export const hairColor = [
+    { id:0, label: '' },
       { id:1, label: 'blonde' },
       { id:2, label: 'platinumBlonde	' },
       { id:3, label: 'brown' },
