@@ -127,13 +127,13 @@ SetLabel(name2)
 const fileInput = useRef(null)
 const picInput = useRef(null)
 const handleClick2 = event => {
-  if (!style) {
+  if (!hairstyle) {
     alert('PLEASE PICK AN HAIRTYLE')
   }else{
   fileInput.current.click();}
 };
 const handleClick3 = event => {
-  if (!style) {
+  if (!hairstyle) {
     alert('PLEASE PICK AN HAIRTYLE')
   }else{
   picInput.current.click();}
