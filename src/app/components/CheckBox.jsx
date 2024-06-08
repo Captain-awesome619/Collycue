@@ -31,7 +31,7 @@ SetChecked(!Checked)
        It's processed and stored exclusively on your device,
       ensuring your privacy is maintained, and there's no transmission to external servers.</h4>
     </div>
-    <div  className= {Checked == false ? "flex flex-col gap-[2rem] opacity-[0.2]  z-[-1] duration-500" : "duration-500 flex flex-col gap-[2rem] "} >
+    <div  className= {Checked === false ? "flex flex-col gap-[2rem] opacity-[0.2]  z-[-1] duration-500" : "duration-500 flex flex-col gap-[2rem] "} >
     <button onClick={()=>Navigate.push("/ProductPage")} disabled={!Checked} className="bg-primary3 flex items-center justify-center w-[150px] lg:w-[200px] h-[50px] gap-[0.5rem] ">
     <IoCameraOutline className="text-white text-[20px] lg:text-[25px]" />
     <text className="font-Gelasio text-white text-[14px] font-semibold">LIVE TRY</text>

@@ -10,7 +10,7 @@ import { FaRegSquareFull } from "react-icons/fa6";
 import { hairColor } from '../components/hairstyleData'
 import { hairstyleDataFemale } from '../components/hairstyleData'
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { useRouter } from 'next/navigation'
+import Loader from '../components/loader'
 import Link from 'next/link'
 const Page = () => {
   const LINK = "https://www.ailabapi.com/api/portrait/effects/hairstyle-editor-pro"
@@ -38,6 +38,7 @@ const Page = () => {
   const [Erro22, setErro22] = useState("");
   const [data22, setdata22] = useState("");
   const [sucess, setsucess] = useState(false);
+  const [loading, setloading] = useState(false);
 
 
   let response
@@ -83,6 +84,7 @@ const Page = () => {
         console.log(res)
   setErro22(res.error_msg)
   setdata22(res.data)
+  setloading(false)
   setsucess(true)
       }
       )
@@ -103,6 +105,7 @@ const Page = () => {
       useEffect(() => {
         let timer
         if (upload22) {
+          setloading(true)
          timer = setTimeout(()=>{
             getData()
           },4000)
@@ -256,13 +259,19 @@ className="cursor-pointer flex lg:hidden pr-[0.5rem]"
     backgroundRepeat: 'no-repeat'}:{backgroundImage : `url("${display.first}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'}}>
+
+
 <div className={display.first ? "flex flex-col gap-[1rem] justify-end items-end pb-[1rem] pr-[1rem] mx-auto w-full" : "hidden"}>
 < GrSplit color='white' size={30} className={data22 ? "hidden" : "cursor-pointer"} onClick={()=> setcompare(!compare)}/>
 { data22 ?<a href={data22.image}>< MdOutlineDownloadForOffline color='white' size={30} className="cursor-pointer"   /></a>
  :<a  href={display.first}>< MdOutlineDownloadForOffline color='white' size={30} className="cursor-pointer"   /></a>
 }
+
 </div>
-<div className={  display.first ?   "hidden" : data22 ? "hidden" : " w-full items-center justify-end  flex flex-col gap-[1rem] "}>
+<div className=" flex items-center justify-center lg:left-[20%] lg:top-[50%] left-[35%] top-[30%] absolute">
+      {loading == true ? <Loader/> :  "" }
+</div>
+<div className={  display.first ?   "hidden" : data22 ? "hidden" : loading ? "hidden" : " w-full items-center justify-end  flex flex-col gap-[1rem] "}>
 <div className={ upload == false ? "hidden" : data22 ? "hidden" : "pl-[0.5rem] flex flex-row gap-[1rem] items-center justify-center"}>
 <button  className={ style ? "flex lg:hidden font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg  cursor-pointer" : "cursor-not-allowed opacity-[0.2] font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg duration-500"} onClick={handleClick3}>
   Take Picture
@@ -273,6 +282,7 @@ className="cursor-pointer flex lg:hidden pr-[0.5rem]"
   Upload Picture
   </button>
 </div>
+
 { file22 ?
 <button onClick={submit} className="mb-[0.5rem] duration-500  border-primary2  text-white font-Gelasio text-[14px] lg:text-[16px] font-semibold bg-primary2 w-[100px] h-[50px] lg:w-[110px] lg:h-[48px] cursor-pointer rounded-2xl">Generate Image</button>
 :
@@ -285,6 +295,7 @@ onClick={handleClick4}
 className="cursor-pointer"
 />
 }
+
 </div>
 </div>
 
@@ -376,22 +387,37 @@ alt="model"
 onClick={ResetAll}/>
 :
  "" }
-          <div className="cursor-pointer">
-            <h1>Select Hairstyle for Female</h1>
-            <select onChange={hairstyleSelect}  className="cursor-pointer appearance-none flex flex-col items-center justify-center ">
+          <div>
+            <h1 className=' font-bold text-xl '>Select Hairstyle</h1>
+            <select
+              onChange={hairstyleSelect}
+              className=' w-fit border-2 border-black mt-2 font-semibold rounded-md h-10 bg-primary1 hover:bg-white transition-all duration-500 '>
               {hairstyleDataFemale.map((item) => {
-                return <option className="cursor-pointer flex flex-col items-center justify-end text-[13px] font-lato font-bold lg:text-[16px]" key={item.id}>{item.label}</option>;
+                return (
+                  <option
+                    className=' text-lg p-3 bg-primary1  '
+                    key={item.id}>
+                    {item.label}
+                  </option>
+                );
               })}
             </select>
           </div>
-          <div className="cursor-pointer">
-            <h1>Select Colour</h1>
-            <select onChange={haircolour} className="cursor-pointer appearance-none flex flex-col items-center justify-center ">
+          <div>
+            <h1 className=' font-bold text-xl '>Select Colour</h1>
+            <select
+              onChange={haircolour}
+              className=' w-fit border-2 border-black mt-2 font-semibold rounded-md h-10 bg-primary1  hover:bg-white transition-all duration-500'>
               {hairColor.map((item) => {
-                return <option className="cursor-pointer flex flex-col items-center justify-end text-[13px] font-lato font-bold lg:text-[16px]" key={item.id}>{item.label}</option>;
+                return (
+                  <option
+                    className=' text-lg p-3  bg-primary1'
+                    key={item.id}>
+                    {item.label}
+                  </option>
+                );
               })}
             </select>
-
           </div>
 </div>
 }
