@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images:{
-        domains: ['coilycue-api.onrender.com' , 'localhost']
+        domains: ['coilycue-api.onrender.com' , 'localhost' ,'ailab-result-rapidapi.oss-accelerate.aliyuncs.com']
     }
 };
 
