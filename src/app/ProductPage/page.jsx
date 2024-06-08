@@ -46,13 +46,13 @@ const Page = () => {
     e.preventDefault();
     if (!file22) return;
     const myHeaders = new Headers();
-    myHeaders.append("ailabapi-api-key" ,"pmsnJu43qmu1vQgfaNLVKI3eGjJYoBCxddsxZHEkOOKMFSk68FfCMW7tPvnBI9HY");
+    myHeaders.append("ailabapi-api-key" ,"HbJ130FyEkKNUqBisO6uoe74prVfDXWX9c8NZdWhfgQ0dUlnjiHxDjAIkmwrzGRY");
     const formdata = new FormData();
     formdata.append("task_type", "async");
     formdata.append("image", file22, "file");
     console.log(file22)
     formdata.append("hair_style", hairstyle);
-
+    formdata.append("color", hairColour);
     const requestOptions = {
       method: 'POST',
       headers: myHeaders,
@@ -65,6 +65,7 @@ const Page = () => {
         console.log(response)
          setvalue22(response.task_id)
          setupload22(true)
+         setFile22()
         console.log(value22)
       })
       .catch(error => console.log('error', error));
@@ -72,7 +73,7 @@ const Page = () => {
 
   const getData = async () => {
     const myHeaders = new Headers();
-    myHeaders.append("ailabapi-api-key","pmsnJu43qmu1vQgfaNLVKI3eGjJYoBCxddsxZHEkOOKMFSk68FfCMW7tPvnBI9HY");
+    myHeaders.append("ailabapi-api-key","HbJ130FyEkKNUqBisO6uoe74prVfDXWX9c8NZdWhfgQ0dUlnjiHxDjAIkmwrzGRY");
     const requestOptions = {
       method: 'GET',
       headers: myHeaders,
@@ -85,15 +86,14 @@ const Page = () => {
   setErro22(res.error_msg)
   setdata22(res.data)
   setloading(false)
+  setHairStyle("")
   setsucess(true)
       }
       )
       .catch(error => console.log('error', error))
           }
-
   const hairstyleSelect = (e) => {
     setHairStyle(e.target.value);
-     setstyle(e.target.innerText);
   };
   const haircolour = (e) => {
     setHairColour(e.target.value);
@@ -112,7 +112,6 @@ const Page = () => {
         }
         return() => clearTimeout(timer)
       },[upload22]);
-
     const getHair = () =>{
         fetch('https://coilycue-api.onrender.com/images/all')
         .then(response => response.json())
@@ -145,6 +144,9 @@ function handleClick4() {
 function handleClick5() {
   setupload(false),
   setoptions(false)
+  setErro22("")
+  setsucess(false)
+  setdata22("")
   }
   const handleMove = (event) => {
     event.preventDefault();
@@ -275,14 +277,13 @@ className="cursor-pointer flex lg:hidden pr-[0.5rem]"
 <div className={ upload == false ? "hidden" : data22 ? "hidden" : "pl-[0.5rem] flex flex-row gap-[1rem] items-center justify-center"}>
 <button  className={ hairstyle ? "flex lg:hidden font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg  cursor-pointer" : "cursor-not-allowed opacity-[0.2] font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg duration-500"} onClick={handleClick3}>
   Take Picture
-<input type="file"onChange={(e) => setFile22(e.target.files?.[0]) } accept="image/*" capture="user" className="hidden" ref={picInput}/>
+<input type="file" onChange={(e) => setFile22(e.target.files?.[0]) } accept="image/*" capture="user" className="hidden" ref={picInput}/>
 </button>
 <button  className={ hairstyle ? "font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg  cursor-pointer" : "cursor-not-allowed opacity-[0.2] font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg  duration-500"} onClick={handleClick2}>
 <input type="file" ref={fileInput}  onChange={(e) => setFile22(e.target.files?.[0]) } className="hidden"  />
   Upload Picture
   </button>
 </div>
-
 { file22 ?
 <button onClick={submit} className="mb-[0.5rem] duration-500  border-primary2  text-white font-Gelasio text-[14px] lg:text-[16px] font-semibold bg-primary2 w-[100px] h-[50px] lg:w-[110px] lg:h-[48px] cursor-pointer rounded-2xl">Generate Image</button>
 :
@@ -295,7 +296,7 @@ onClick={handleClick4}
 className="cursor-pointer"
 />
 }
-
+{console.log(file22)}
 </div>
 </div>
 
