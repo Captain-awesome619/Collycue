@@ -273,11 +273,11 @@ className="cursor-pointer flex lg:hidden pr-[0.5rem]"
 </div>
 <div className={  display.first ?   "hidden" : data22 ? "hidden" : loading ? "hidden" : " w-full items-center justify-end  flex flex-col gap-[1rem] "}>
 <div className={ upload == false ? "hidden" : data22 ? "hidden" : "pl-[0.5rem] flex flex-row gap-[1rem] items-center justify-center"}>
-<button  className={ style ? "flex lg:hidden font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg  cursor-pointer" : "cursor-not-allowed opacity-[0.2] font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg duration-500"} onClick={handleClick3}>
+<button  className={ hairstyle ? "flex lg:hidden font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg  cursor-pointer" : "cursor-not-allowed opacity-[0.2] font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg duration-500"} onClick={handleClick3}>
   Take Picture
 <input type="file"onChange={(e) => setFile22(e.target.files?.[0]) } accept="image/*" capture="user" className="hidden" ref={picInput}/>
 </button>
-<button  className={ style ? "font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg  cursor-pointer" : "cursor-not-allowed opacity-[0.2] font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg  duration-500"} onClick={handleClick2}>
+<button  className={ hairstyle ? "font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg  cursor-pointer" : "cursor-not-allowed opacity-[0.2] font-Gelasio font-bold p-[0.5rem] bg-white rounded-lg  duration-500"} onClick={handleClick2}>
 <input type="file" ref={fileInput}  onChange={(e) => setFile22(e.target.files?.[0]) } className="hidden"  />
   Upload Picture
   </button>
