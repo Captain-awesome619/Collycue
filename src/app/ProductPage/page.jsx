@@ -108,23 +108,6 @@ const Page = () => {
         const res1 = JSON.parse(result);
         console.log(res1.task_id);
         setValue(res1.task_id);
-        //   const res2 = res1.task_id;
-        // var myHeaders = new Headers();
-        //   myHeaders.append('ailabapi-api-key',  `${apikey}`);
-
-        //   var requestOptions = {
-        //     method: 'GET',
-        //     headers: myHeaders,
-        //     redirect: 'follow',
-        //   };
-
-        // fetch(
-        //    ` https://www.ailabapi.com/api/common/query-async-task-result?task_id=${res2}`,
-        //     requestOptions
-        //   )
-        //     .then((response) => response.text())
-        //     .then((result) => console.log(result))
-        //     .catch((error) => console.log('error', error));
       })
       .catch((error) => console.log('error', error));
   };
@@ -362,84 +345,54 @@ const Page = () => {
           )}
         </div>
       ) : (
-        <div className='grid gap-4 grid-cols-4'>
-          {/* <button
-            className='font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white'
-            onClick={handleClick5}>
-            undercut
-          </button>
-          <button
-            className='font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white'
-            onClick={handleClick5}>
-            undercut
-          </button>
-          <button
-            className='font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white'
-            onClick={handleClick5}>
-            undercut
-          </button>
-          <button
-            className='font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white'
-            onClick={handleClick5}>
-            undercut
-          </button>
-          <button
-            className='font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white'
-            onClick={handleClick5}>
-            undercut
-          </button>
-          <button
-            className='font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white'
-            onClick={handleClick5}>
-            undercut
-          </button>
-          <button
-            className='font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white'
-            onClick={handleClick5}>
-            undercut
-          </button>
-          <button
-            className='font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white'
-            onClick={handleClick5}>
-            undercut
-          </button>
-          <button
-            className='font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white'
-            onClick={handleClick5}>
-            undercut
-          </button>
-          <button
-            className='font-Gelasio font-bold cursor-pointer p-[0.5rem] rounded-lg bg-gray-600 text-white'
-            onClick={handleClick5}>
-            undercut
-          </button>
-          {console.log(style)} */}
+        <div className=' grid gap-y-5 grid-cols'>
           <div>
-            <h1>Select Hairstyle for Men</h1>
-            <select onChange={hairstyleSelect}>
+            <h1 className=' font-bold text-xl '>Select Hairstyle for Men</h1>
+            <select
+              onChange={hairstyleSelect}
+              className=' w-fit border-2 border-black mt-2 font-semibold rounded-md h-10 bg-primary1 hover:bg-white transition-all duration-500'>
               {hairstyleDataMen.map((item) => {
-                return <option key={item.id}>{item.label}</option>;
+                return (
+                  <option
+                    className=' text-lg p-3  bg-primary1'
+                    key={item.id}>
+                    {item.label}
+                  </option>
+                );
               })}
             </select>
-            <div>{hairstyle}</div>
           </div>
           <div>
-            <h1>Select Hairstyle for Female</h1>
-            <select onChange={hairstyleSelect}>
+            <h1 className=' font-bold text-xl '>Select Hairstyle for Female</h1>
+            <select
+              onChange={hairstyleSelect}
+              className=' w-fit border-2 border-black mt-2 font-semibold rounded-md h-10 bg-primary1 hover:bg-white transition-all duration-500 '>
               {hairstyleDataFemale.map((item) => {
-                return <option key={item.id}>{item.label}</option>;
+                return (
+                  <option
+                    className=' text-lg p-3 bg-primary1  '
+                    key={item.id}>
+                    {item.label}
+                  </option>
+                );
               })}
             </select>
-            <div>{hairstyle}</div>
           </div>
           <div>
-            <h1>Select Colour</h1>
-            <select onChange={haircolour}>
+            <h1 className=' font-bold text-xl '>Select Colour</h1>
+            <select
+              onChange={haircolour}
+              className=' w-fit border-2 border-black mt-2 font-semibold rounded-md h-10 bg-primary1  hover:bg-white transition-all duration-500'>
               {hairColor.map((item) => {
-                return <option key={item.id}>{item.label}</option>;
+                return (
+                  <option
+                    className=' text-lg p-3  bg-primary1'
+                    key={item.id}>
+                    {item.label}
+                  </option>
+                );
               })}
             </select>
-            <div>{hairstyle}</div>
           </div>
         </div>
       )}
