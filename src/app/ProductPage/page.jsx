@@ -41,7 +41,7 @@ const Page = () => {
   const [data22, setdata22] = useState("");
   const [sucess, setsucess] = useState(false);
   const [loading, setloading] = useState(false);
-  const [cap, setcap] = useState("");
+
 
 
   let response
