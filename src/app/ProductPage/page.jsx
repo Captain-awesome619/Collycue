@@ -49,7 +49,7 @@ const Page = () => {
     e.preventDefault();
     if (!file22) return;
     const myHeaders = new Headers();
-    myHeaders.append("ailabapi-api-key" ,"HbJ130FyEkKNUqBisO6uoe74prVfDXWX9c8NZdWhfgQ0dUlnjiHxDjAIkmwrzGRY");
+    myHeaders.append("ailabapi-api-key" ,process.env.AILAB_API_KEY );
     const formdata = new FormData();
     formdata.append("task_type", "async");
     formdata.append("image", file22, "file");
@@ -71,12 +71,10 @@ const Page = () => {
          setFile22()
         console.log(value22)
       })
-      .catch(error => console.log('error', error));
-  };
-
+      .catch(error => console.log('error', error));};
   const getData = async () => {
     const myHeaders = new Headers();
-    myHeaders.append("ailabapi-api-key","HbJ130FyEkKNUqBisO6uoe74prVfDXWX9c8NZdWhfgQ0dUlnjiHxDjAIkmwrzGRY");
+    myHeaders.append("ailabapi-api-key", process.env.AILAB_API_KEY );
     const requestOptions = {
       method: 'GET',
       headers: myHeaders,
@@ -91,10 +89,7 @@ const Page = () => {
   setloading(false)
   setHairStyle("")
   setsucess(true)
-      }
-      )
-      .catch(error => console.log('error', error))
-          }
+      }).catch(error => console.log('error', error))}
   const hairstyleSelect = (e) => {
     setHairStyle(e.target.value);
   };
@@ -104,7 +99,6 @@ const Page = () => {
     useEffect(() => {
         getHair()
       }, []);
-
       useEffect(() => {
         let timer
         if (upload22) {
@@ -120,12 +114,10 @@ const Page = () => {
         .then(response => response.json())
         .then(data => { let sample = data
           SetHair(sample) })
-        .catch(error => console.error(error));
-    }
+        .catch(error => console.error(error));}
 function handleClick(name,name2) {
 SetState(name),
-SetLabel(name2)
-}
+SetLabel(name2)}
 const fileInput = useRef(null)
 const picInput = useRef(null)
 const handleClick2 = event => {
@@ -206,20 +198,13 @@ className="cursor-pointer hidden lg:flex  ml-[1rem]"
 { compare == true ? <div   className=" flex items-center justify-center">
 <div className="lg:w-full w-screen h-full relative" onPointerUp={handleMouseUp} onMouseUp={handleMouseUp}>
       <div
-        className="relative  aspect-[50/50] m-auto overflow-hidden select-none lg:w-[500px] bg-[#D9D9D9]  w-[80%] h-[350px]  lg:h-[517px]"
+        className="relative  m-auto overflow-hidden select-none lg:w-[500px] bg-[#D9D9D9]  w-[80%] h-[350px]  lg:h-[517px]"
         onMouseMove={handleMove}
         onMouseDown={handleMouseDown}
 onPointerDown={handleMouseDown}
-onPointerMove={handleMove}
-      >
-       <div  className={ `lg:aspect-[50/80] aspect-[70/80] lg:w-[500px] lg:h-[517px]   flex `  }  style={display.second? {  backgroundImage : `url("${display.second}")`, backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',} : {backgroundImage : `url("${url.concat(State[0].imageUrl)}")`, backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat'}}>
-</div>
-{console.log(State[0].imageUrl)}
-        <div
+onPointerMove={handleMove}>
+
+<div
           className={"absolute top-0 left-0 right-0 w-full aspect-[50/80] lg:w-[500px] lg:h-[517px] m-auto overflow-hidden select-none"}
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
         >
@@ -228,6 +213,19 @@ onPointerMove={handleMove}
     backgroundRepeat: 'no-repeat'}}>
 </div>
         </div>
+
+
+       <div  className={ `lg:aspect-[50/80] aspect-[70/80] lg:w-[500px] lg:h-[517px]   flex `  }  style={display.second? {  backgroundImage : `url("${display.second}")`, backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',} : {backgroundImage : `url("${url.concat(State[0].imageUrl)}")`, backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'}}>
+</div>
+{console.log(State[0].imageUrl)}
+
+
+
+
         <div
           className="touch-none absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"
           style={{
@@ -390,8 +388,8 @@ onClick={Reset}/>
   { sucess ?
 <Image
 src ={reset}
-height ={80}
-width ={80}
+height ={60}
+width ={60}
 className="cursor-pointer"
 alt="model"
 onClick={ResetAll}/>
@@ -431,7 +429,6 @@ onClick={ResetAll}/>
           </div>
 </div>
 }
-
     </div>
   )
 }
