@@ -36,8 +36,8 @@ SetChecked(!Checked)
     <IoCameraOutline className="text-white text-[20px] lg:text-[25px]" />
     <text className="font-Gelasio text-white text-[14px] font-semibold">LIVE TRY</text>
     </button>
-    <input type="file" className="hidden" />
-    <div className="flex flex-row gap-[0.5rem]  cursor-pointer">
+
+    <div className="flex flex-row gap-[0.5rem]  cursor-pointer"  onClick={()=>Navigate.push("/ProductPage")}>
     <Image src={model3}
 width={18}
 height ={19}
@@ -46,7 +46,7 @@ alt= "icon"
     <text className="font-Gelasio font-semibold text-[14px] text-primary3">UPLOAD PHOTO</text>
     </div>
 
-    <div className="flex flex-row gap-[0.5rem] cursor-pointer  " >
+    <div className="flex flex-row gap-[0.5rem] cursor-pointer  "  onClick={()=>Navigate.push("/ProductPage")} >
     <Image src={model2}
 width={18}
 height ={19}
