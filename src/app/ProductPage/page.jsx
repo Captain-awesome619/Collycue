@@ -68,7 +68,7 @@ const Page = () => {
         console.log(response)
          setvalue22(response.task_id)
          setupload22(true)
-         setFile22()
+         setFile22("")
         console.log(value22)
       })
       .catch(error => console.log('error', error));};
@@ -84,8 +84,8 @@ const Page = () => {
       .then(response => response.text())
       .then(message => {const res = JSON.parse(message)
         console.log(res)
-  setErro22(res.error_msg)
-  setdata22(res.data)
+  setErro22(res?.error_msg)
+  setdata22(res?.data)
   setloading(false)
   setHairStyle("")
   setsucess(true)
@@ -259,7 +259,7 @@ className="cursor-pointer flex lg:hidden pr-[0.5rem]"
 />
 </Link>
 }
-<div  className={` w-[80%] h-[350px] aspect-[50/50] lg:w-[500px] lg:h-[517px] bg-[#D9D9D9]  flex `}  style={data22 ?{  backgroundImage : `url("${data22.images[0]}")`, backgroundSize: 'cover',
+<div  className={` w-[80%] h-[350px] aspect-[50/50] lg:w-[500px] lg:h-[517px] bg-[#D9D9D9]  flex `}  style={data22.images ?{  backgroundImage : `url("${data22.images[0]}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'}:{backgroundImage : `url("${display.first}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -268,7 +268,7 @@ className="cursor-pointer flex lg:hidden pr-[0.5rem]"
 
 <div className={display.first ? "flex flex-col gap-[1rem] justify-end items-end pb-[1.5rem] pr-[1rem] mx-auto w-full" : "hidden"}>
 < GrSplit color='white' size={30} className={data22 ? "hidden" : "cursor-pointer"} onClick={()=> setcompare(!compare)}/>
-{ data22.length ? <a href={data22.image}>< MdOutlineDownloadForOffline color='white' size={30} className="cursor-pointer"   /></a>
+{ data22 ? <a href={data22.image}>< MdOutlineDownloadForOffline color='white' size={30} className="cursor-pointer"   /></a>
  :<a  href={display.first}>< MdOutlineDownloadForOffline color='white' size={30} className="cursor-pointer"   /></a>
 }
 
