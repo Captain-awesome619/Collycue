@@ -15,6 +15,7 @@ export const Navbar = () => {
 src = {logo}
 width = {45}
 height = {40}
+
 alt = "logo"
 />
 <h2 className="font-Gelasio font-semibold text-[24px] lg:text-[35px] text-primary2">Coilycue</h2>
