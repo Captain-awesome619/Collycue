@@ -37,7 +37,7 @@ const Page = () => {
   const [value22, setvalue22] = useState("");
   const [upload22, setupload22] = useState(false);
   const [Erro22, setErro22] = useState("");
-  const [data22, setdata22] = useState({});
+  const [data22, setdata22] = useState("");
   const [sucess, setsucess] = useState(false);
   const [loading, setloading] = useState(false);
 
@@ -262,8 +262,6 @@ className="cursor-pointer flex lg:hidden pr-[0.5rem]"
     backgroundRepeat: 'no-repeat'}:{backgroundImage : `url("${display.first}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'}}>
-
-
 <div className={display.first ? "flex flex-col gap-[1rem] justify-end items-end pb-[1.5rem] pr-[1rem] mx-auto w-full" : "hidden"}>
 < GrSplit color='white' size={30} className={data22 ? "hidden" : "cursor-pointer"} onClick={()=> setcompare(!compare)}/>
 { data22 ? <a href={data22.image}>< MdOutlineDownloadForOffline color='white' size={30} className="cursor-pointer"   /></a>
