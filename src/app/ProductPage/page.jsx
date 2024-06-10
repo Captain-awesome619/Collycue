@@ -28,20 +28,18 @@ const Page = () => {
     });
   const [upload, setupload] = useState(false);
   const [options, setoptions] = useState(false);
-  const [style, setstyle] = useState(false);
   const [compare, setcompare] = useState(false);
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const [hairstyle, setHairStyle] = useState('');
-  const [hairColour, setHairColour] = useState('blonde');
-  const [file22, setFile22] = useState();
-  const [value22, setvalue22] = useState({});
+  const [hairColour, setHairColour] = useState('black');
+  const [file22, setFile22] = useState("");
+  const [value22, setvalue22] = useState("");
   const [upload22, setupload22] = useState(false);
   const [Erro22, setErro22] = useState("");
-  const [data22, setdata22] = useState("");
+  const [data22, setdata22] = useState({});
   const [sucess, setsucess] = useState(false);
   const [loading, setloading] = useState(false);
-
 
 
   let response
@@ -259,7 +257,7 @@ className="cursor-pointer flex lg:hidden pr-[0.5rem]"
 />
 </Link>
 }
-<div  className={` w-[80%] h-[350px] aspect-[50/50] lg:w-[500px] lg:h-[517px] bg-[#D9D9D9]  flex `}  style={data22.images ?{  backgroundImage : `url("${data22.images[0]}")`, backgroundSize: 'cover',
+<div  className={` w-[80%] h-[350px] aspect-[50/50] lg:w-[500px] lg:h-[517px] bg-[#D9D9D9]  flex `}  style={data22 ? {  backgroundImage : `url("${data22.images[0]}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'}:{backgroundImage : `url("${display.first}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
