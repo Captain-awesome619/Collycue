@@ -168,7 +168,7 @@ setdata22("")
 setErro22("")
 setoptions(false)
 setupload22(false)
-setFile22()
+setFile22("")
 setsucess(false)
 setupload(false)
 }
