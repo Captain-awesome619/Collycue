@@ -7,6 +7,7 @@ import model2 from "../../../public/assests/display2.png"
 import model3 from "../../../public/assests/display3.png"
 import { IoCameraOutline } from "react-icons/io5";
 import { useRouter } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
 const Policy = () => {
   const [Checked,SetChecked] = useState(false)
   function checkbox() {
@@ -14,7 +15,13 @@ SetChecked(!Checked)
   }
   const Navigate  = useRouter()
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center gap-[3rem]">
+    <motion.div
+    initial={{ opacity: 0, x: -15 }}
+    animate={{ opacity: 1, x: 0 }}
+    exist={{ opacity: 0, x: 15 }}
+    transition={{ delay:0.5 }}
+
+    className="flex flex-col lg:flex-row items-center justify-center gap-[3rem]">
     <Image
     src = {model}
     width = {375}
@@ -56,7 +63,7 @@ alt= "icon"
     </div>
     </div>
     </div>
-        </div>
+        </motion.div>
   )
 }
 

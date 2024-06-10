@@ -1,9 +1,15 @@
 import React from 'react'
 import Accordion from './Accordion'
-
+import { motion, AnimatePresence } from 'framer-motion';
 const Faq = () => {
   return (
-    <div className='flex flex-col items-center justify-centerbg-[url("/assests/display2.png")]'>
+    <motion.div
+    initial={{ opacity: 0, x: 15 }}
+    animate={{ opacity: 1, x: 0 }}
+    exist={{ opacity: 0, x: 15 }}
+    transition={{ delay:0.5 }}
+
+    className='flex flex-col items-center justify-centerbg-[url("/assests/display2.png")]'>
 <div className="flex flex-col justify-center ">
 <Accordion
         title="Is there an app to change your hair color?"
@@ -23,7 +29,7 @@ const Faq = () => {
       Autem voluptatem deleniti ab aliquid pariatur! Atque aliquid totam consequatur deleniti sed." />
       </div>
 
-      </div>
+      </motion.div>
   )
 }
 

@@ -26,7 +26,8 @@ const { scrollYProgress } = useScroll({
 });
   return (
     <motion.div className="flex flex-col gap-[2rem]"
-    >
+    
+ >
     <h2 className="font-Gelasio font-semibold text-[18px] lg:text-[24px]  text-primary3 text-center">Try On Hair-Styles Virtually With Just 3 Easy Steps</h2>
     <div className="w-screen h-max  lg:pb-0">
 {CarouselData?.map((data , id) => <div className="" key={id}>
