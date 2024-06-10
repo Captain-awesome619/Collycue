@@ -1,10 +1,11 @@
 "use client"
-import React,{useState} from 'react'
+import React,{useState,useRef} from 'react'
 import CarouselData from './CarouselData'
 import Image from 'next/image'
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
 import Loading from './loading';
+import { motion, useScroll } from 'framer-motion';
 const Carousel = () => {
   const [View,SetView] = useState(1)
 
@@ -17,8 +18,18 @@ SetView(prevview => prevview - 1)
 const imageLoader = ({ src, width, quality }) => {
   return <Loading/>
 }
+const refs = useRef(null);
+
+const { scrollYProgress } = useScroll({
+  target: refs, // gives the component to apply animation//
+  offset: ['0 1', '1.1 0.9'], // specifies when to start effecting animation//
+});
   return (
-    <div className="flex flex-col gap-[2rem]">
+    <motion.div className="flex flex-col gap-[2rem]"
+    ref={refs}
+    style={{scale:scrollYProgress, opacity:scrollYProgress }}
+    viewport = {{once : true}}
+    >
     <h2 className="font-Gelasio font-semibold text-[18px] lg:text-[24px]  text-primary3 text-center">Try On Hair-Styles Virtually With Just 3 Easy Steps</h2>
     <div className="w-screen h-max  lg:pb-0">
 {CarouselData?.map((data , id) => <div className="" key={id}>
@@ -51,7 +62,7 @@ const imageLoader = ({ src, width, quality }) => {
   }
 </div> )}
       </div>
-      </div>
+      </motion.div>
   )
 }
 export default Carousel
