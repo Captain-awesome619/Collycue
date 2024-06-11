@@ -16,18 +16,26 @@ SetChecked(!Checked)
   const Navigate  = useRouter()
   return (
     <motion.div
-    initial={{ opacity: 0, x: -15 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    transition={{ delay:1 }}
-    viewport={{once: true}}
+
     className="flex flex-col lg:flex-row items-center justify-center gap-[3rem]">
+       <motion.div
+        initial={{ opacity: 0, x: -15 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ delay:1 }}
+        viewport={{once: true}} >
     <Image
     src = {model}
     width = {375}
     height = {380}
     alt = "model"
     />
-    <div className="flex flex-col justify-around items-center lg:items-start w-[90%] lg:w-[45%] gap-[2rem] ">
+    </motion.div>
+    <motion.div
+    initial={{ opacity: 0, x: -15 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ delay:1 }}
+    viewport={{once: true}}
+    className="flex flex-col justify-around items-center lg:items-start w-[90%] lg:w-[45%] gap-[2rem] ">
     <h3 className="font-Gelasio text-[20px] font-semibold text-primary3 text-center ">Virtual Try-On</h3>
     <div className="flex flex-row gap-[0.5rem] justify-center  ">
     <input type="checkbox" className="w-[100px] h-[30px] text-primary3 cursor-pointer" onClick={checkbox}   />
@@ -61,7 +69,8 @@ alt= "icon"
     <text className="font-Gelasio font-semibold text-[14px] text-primary3">USE MODEL</text>
     </div>
     </div>
-    </div>
+    </motion.div>
+
         </motion.div>
   )
 }
