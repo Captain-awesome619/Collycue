@@ -381,7 +381,7 @@ onClick={Reset}/>
 }
 </div>
 :
-<div className="lg:flex lg:flex-row grid items-center justify-around gap-[1rem]">
+<div className="lg:flex lg:flex-row grid items-center mt-[2rem] lg:mt-[0rem] justify-around gap-[1rem]">
   { sucess ?
 <Image
 src ={reset}
