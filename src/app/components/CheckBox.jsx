@@ -18,7 +18,7 @@ SetChecked(!Checked)
     <motion.div
     initial={{ opacity: 0, x: -15 }}
     whileInView={{ opacity: 1, x: 0 }}
-    transition={{ delay:0.5 }}
+    transition={{ delay:1 }}
     viewport={{once: true}}
     className="flex flex-col lg:flex-row items-center justify-center gap-[3rem]">
     <Image

@@ -16,7 +16,7 @@ export default function Home() {
      className="flex flex-col gap-[4rem] lg:gap-[7rem]   " >
 <motion.div  initial={{ opacity: 0, y: 15 }}
      whileInView={{ opacity: 1, y: 0 }}
-     transition={{ delay:0.5 }}
+     transition={{ delay:1 }}
 viewport={{once: true}}
      className="  flex flex-col gap-[1.5rem] items-center justify-center mt-[2rem] lg:mt-[4rem]">
 <h2    className="font-Gelasio font-bold text-[20px] lg:text-[30px] text-primary3 text-center w-[65%]">Transform Your Look Effortlessly: Experiment with Coilycue's Virtual Try-On Tool for Hair Style and Color!</h2>
