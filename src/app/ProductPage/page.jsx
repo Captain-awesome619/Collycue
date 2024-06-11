@@ -221,10 +221,6 @@ onPointerMove={handleMove}>
     backgroundRepeat: 'no-repeat'}}>
 </div>
 {console.log(State[0].imageUrl)}
-
-
-
-
         <div
           className="touch-none absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"
           style={{
@@ -265,7 +261,7 @@ className="cursor-pointer flex lg:hidden pr-[0.5rem]"
     backgroundRepeat: 'no-repeat'}}>
 <div className={display.first ? "flex flex-col gap-[1rem] justify-end items-end pb-[1.5rem] pr-[1rem] mx-auto w-full" : "hidden"}>
 < GrSplit color='white' size={30} className={data22 ? "hidden" : "cursor-pointer"} onClick={()=> setcompare(!compare)}/>
-{ data22 ? <a href={data22.image}>< MdOutlineDownloadForOffline color='white' size={30} className="cursor-pointer"   /></a>
+{ data22 ? <a href={data22.imageS[0]}>< MdOutlineDownloadForOffline color='white' size={30} className="cursor-pointer"   /></a>
  :<a  href={display.first}>< MdOutlineDownloadForOffline color='white' size={30} className="cursor-pointer"   /></a>
 }
 
@@ -298,14 +294,14 @@ className="cursor-pointer mb-[0.5rem]"
 }
 {console.log(file22)}
 </div>
+
 </div>
-<h3 className={options == true ? "font-Gelasio text-[13px] lg:left-auto lg:top-auto left-[20%] top-[25%] w-fit absolute lg:text-[16px] text-red-600 font-bold mb-[1rem] flex items-center justify-center" : "hidden"}>{Erro22}</h3>
+<h3 className={options == true ? "font-Gelasio  hidden absolute w-[30%] text-center text-[16px] text-red-600 font-bold mb-[1rem] lg:flex items-center justify-center" : "hidden"}>{Erro22}</h3>
 </div>
 
 }
 
-<div className="flex flex-col items-center justify-center">
-</div>
+<h3 className={options == true ? "font-Gelasio text-[14px] lg:hidden  text-center lg:text-[16px] w-[80%] text-red-600 font-bold my-[1rem] flex items-center justify-center" : "hidden"}>{Erro22}</h3>
 {options == false ?
 <div className="flex flex-col mt-[2rem] lg:mt-[0rem] gap-[1rem] items-center justify-center w-[100%]">
 <div className="w-[95%] h-[50px] lg:w-[100%] bg-primary1 flex flex-row items-center justify-center gap-[2rem]">
