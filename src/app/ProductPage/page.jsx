@@ -38,7 +38,7 @@ const Page = () => {
   const [upload22, setupload22] = useState(false);
   const [Erro22, setErro22] = useState("");
   const [data22, setdata22] = useState("");
-  const [sucess, setsucess] = useState(false);
+  const [sucess, setsucess] = useState(true);
   const [loading, setloading] = useState(false);
 
 
@@ -176,6 +176,7 @@ setupload(false)
 let firstopt
   return (
 <div className='flex flex-col  lg:flex-row gap-[rem] lg:gap-[3rem]  items-center lg:items-start  justify-center  mt-[2rem]'>
+
 { options == true ?
 
 <FaArrowLeftLong
@@ -298,11 +299,11 @@ className="cursor-pointer mb-[0.5rem]"
 {console.log(file22)}
 </div>
 </div>
-
+<h3 className={options == true ? "font-Gelasio text-[13px] lg:left-auto lg:top-auto left-[20%] top-[25%] w-fit absolute lg:text-[16px] text-red-600 font-bold mb-[1rem] flex items-center justify-center" : "hidden"}>{Erro22}</h3>
 </div>
 
 }
-<h3 className={options == true ? "font-Gelasio text-[16px] text-red-600 font-bold mb-[1rem] flex items-center justify-center" : "hidden"}>{Erro22}</h3>
+
 <div className="flex flex-col items-center justify-center">
 </div>
 {options == false ?
@@ -392,39 +393,43 @@ onClick={ResetAll}/>
 :
  "" }
           <div>
-            <h1 className=' font-bold text-xl '>Select Hairstyle</h1>
+            <h1 className=' font-bold text-xl font-Lato  '>Select Hairstyle</h1>
             <select
               onChange={hairstyleSelect}
-              className=' w-fit border-2 border-black mt-2 font-semibold rounded-md h-10 bg-primary1 hover:bg-white transition-all duration-500 '>
+              className=' cursor-pointer w-fit border-2 border-black mt-2 font-semibold rounded-md h-10 bg-primary1 hover:bg-white transition-all duration-1000 '>
               {hairstyleDataFemale.map((item) => {
                 return (
                   <option
                     className=' text-lg p-3 bg-primary1  '
                     key={item.id}>
-                    {item.label}
+                  <h3 className='font-Gelasio font-semibold text-[14px]' >   {item.label}</h3>
                   </option>
                 );
               })}
             </select>
           </div>
           <div>
-            <h1 className=' font-bold text-xl '>Select Colour</h1>
+            <h1 className=' font-bold font-Lato text-xl '>Select Colour</h1>
             <select
               onChange={haircolour}
-              className=' w-fit border-2 border-black mt-2 font-semibold rounded-md h-10 bg-primary1  hover:bg-white transition-all duration-500'>
+              className=' w-fit border-2 border-black mt-2 font-semibold rounded-md h-10 bg-primary1  hover:bg-white transition-all duration-1000 cursor-pointer'>
               {hairColor.map((item) => {
                 return (
                   <option
                     className=' text-lg p-3  bg-primary1'
                     key={item.id}>
-                    {item.label}
+                    <h3 className='font-Gelasio font-semibold text-[14px]'> {item.label}</h3>
                   </option>
                 );
               })}
             </select>
+
           </div>
+
 </div>
+
 }
+
     </div>
   )
 }

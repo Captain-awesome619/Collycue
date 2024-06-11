@@ -20,7 +20,7 @@ alt = "logo"
 />
 <h2 className="font-Gelasio font-semibold text-[24px] lg:text-[35px] text-primary2">Coilycue</h2>
 </div>
-<button className=  "duration-500 hover:bg-transparent border-[1px] border-primary2 hover:border-white hover:text-primary2 text-white font-Gelasio text-[14px] lg:text-[16px] font-semibold bg-primary2 w-[70px] h-[35px] lg:w-[110px] lg:h-[48px] cursor-pointer rounded-2xl">Buy</button>
+<a href='https://coilycue.com/?fbclid=PAZXh0bgNhZW0CMTEAAabvA4yf0EddSIHQojoSb8DDQMIPV7uGoOUa4dwNDRkoLBjLF9SwC56_nt8_aem_AY2NidyMEOzx01g9Q7i60fqAXzEdljk2aMlxvKw2Nm7IYcLOnVJ3clkbU_AHDzgiz05oMGPMLZe4GFFv_vuSYQqq'><button className=  "duration-500 hover:bg-transparent border-[1px] border-primary2 hover:border-white hover:text-primary2 text-white font-Gelasio text-[14px] lg:text-[16px] font-semibold bg-primary2 w-[70px] h-[35px] lg:w-[110px] lg:h-[48px] cursor-pointer rounded-2xl">Buy</button></a>
     </div>
   )
 }
