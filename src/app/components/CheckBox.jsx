@@ -7,7 +7,7 @@ import model2 from "../../../public/assests/display2.png"
 import model3 from "../../../public/assests/display3.png"
 import { IoCameraOutline } from "react-icons/io5";
 import { useRouter } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 const Policy = () => {
   const [Checked,SetChecked] = useState(false)
   function checkbox() {
