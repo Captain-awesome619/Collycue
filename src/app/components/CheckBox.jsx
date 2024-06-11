@@ -21,7 +21,7 @@ SetChecked(!Checked)
        <motion.div
         initial={{ opacity: 0, x: -15 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ delay:1 }}
+        transition={{ delay:0.5 }}
         viewport={{once: true}} >
     <Image
     src = {model}
@@ -33,7 +33,7 @@ SetChecked(!Checked)
     <motion.div
     initial={{ opacity: 0, x: -15 }}
     whileInView={{ opacity: 1, x: 0 }}
-    transition={{ delay:1 }}
+    transition={{ delay:0.5 }}
     viewport={{once: true}}
     className="flex flex-col justify-around items-center lg:items-start w-[90%] lg:w-[45%] gap-[2rem] ">
     <h3 className="font-Gelasio text-[20px] font-semibold text-primary3 text-center ">Virtual Try-On</h3>

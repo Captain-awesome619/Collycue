@@ -6,7 +6,7 @@ const Faq = () => {
     <motion.div
     initial={{ opacity: 0, x: 15 }}
     whileInView={{ opacity: 1, x: 0 }}
-    transition={{ delay:1 }}
+    transition={{ delay:0.5 }}
     viewport={{once: true}}
     className='flex flex-col items-center justify-centerbg-[url("/assests/display2.png")]'>
 <div className="flex flex-col justify-center ">
