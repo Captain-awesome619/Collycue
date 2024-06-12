@@ -173,6 +173,8 @@ setupload22(false)
 setFile22("")
 setsucess(false)
 setupload(false)
+setHairStyle("")
+  setHairColour("")
 }
 
 let firstopt
