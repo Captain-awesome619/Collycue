@@ -44,6 +44,7 @@ const Page = () => {
 
   let response
   const submit = async (e) => {
+    setloading(true)
     e.preventDefault();
     if (!file22) return;
     const myHeaders = new Headers();
@@ -63,6 +64,7 @@ const Page = () => {
     fetch(LINK, requestOptions)
       .then(response => response.text())
       .then(result => {  response = JSON.parse(result)
+
         console.log(response)
          setvalue22(response.task_id)
          setupload22(true)
@@ -84,9 +86,9 @@ const Page = () => {
         console.log(res)
   setErro22(res?.error_msg)
   setdata22(res?.data)
-  setloading(false)
   setHairStyle("")
   setsucess(true)
+  setloading(false)
       }).catch(error => console.log('error', error))}
   const hairstyleSelect = (e) => {
     setHairStyle(e.target.value);
@@ -100,7 +102,7 @@ const Page = () => {
       useEffect(() => {
         let timer
         if (upload22) {
-          setloading(true)
+
          timer = setTimeout(()=>{
             getData()
           },4000)
@@ -254,16 +256,16 @@ className="cursor-pointer flex lg:hidden pr-[0.5rem]"
 />
 </Link>
 }
-<div  className={` w-[80%] h-[350px] aspect-[50/50] lg:w-[500px] lg:h-[517px] bg-[#D9D9D9]  flex `}  style={data22 ? {  backgroundImage : `url("${data22.images[0]}")`, backgroundSize: 'cover',
+<div  className={` w-[80%] h-[350px] aspect-[50/50] lg:w-[530px] lg:h-[550px] bg-[#D9D9D9]  flex `}  style={data22 ? {  backgroundImage : `url("${data22.images[0]}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'}:{backgroundImage : `url("${display.first}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'}}>
 <div className={display.first ? "flex flex-col gap-[1rem] justify-end items-end pb-[1.5rem] pr-[1rem] mx-auto w-full" : "hidden"}>
 < GrSplit color='white' size={30} className={data22 ? "hidden" : "cursor-pointer"} onClick={()=> setcompare(!compare)}/>
-{ data22 ? <a href={data22.imageS[0]}>< MdOutlineDownloadForOffline color='white' size={30} className="cursor-pointer"   /></a>
- :<a  href={display.first}>< MdOutlineDownloadForOffline color='white' size={30} className="cursor-pointer"   /></a>
-}
+
+ <a  href={display.first}>< MdOutlineDownloadForOffline color='white' size={30} className="cursor-pointer"   /></a>
+
 
 </div>
 <div className=" flex items-center justify-center lg:left-[20%] lg:top-[50%] left-[35%] top-[30%] absolute">
