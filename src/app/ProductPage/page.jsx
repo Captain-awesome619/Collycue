@@ -83,6 +83,9 @@ const Page = () => {
     fetch(`https://www.ailabapi.com/api/common/query-async-task-result?task_id=${value22}`, requestOptions)
       .then(response => response.text())
       .then(message => {const res = JSON.parse(message)
+        if (res.task_status == 1) {
+          getData()
+        }
         console.log(res)
   setErro22(res?.error_msg)
   setdata22(res?.data)
@@ -93,6 +96,7 @@ const Page = () => {
   const hairstyleSelect = (e) => {
     setHairStyle(e.target.value);
   };
+
   const haircolour = (e) => {
     setHairColour(e.target.value);
   };
