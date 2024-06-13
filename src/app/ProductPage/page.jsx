@@ -87,11 +87,13 @@ const Page = () => {
           getData()
         }
         console.log(res)
-  setErro22(res?.error_msg)
-  setdata22(res?.data)
-  setHairStyle("")
-  setsucess(true)
-  setloading(false)
+        if (res.task_status == 2) {
+          setErro22(res?.error_msg)
+          setdata22(res?.data)
+          setHairStyle("")
+          setsucess(true)
+          setloading(false)
+        }
       }).catch(error => console.log('error', error))}
   const hairstyleSelect = (e) => {
     setHairStyle(e.target.value);
