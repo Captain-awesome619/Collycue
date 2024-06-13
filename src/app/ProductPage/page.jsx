@@ -85,6 +85,12 @@ const Page = () => {
       .then(response => response.text())
       .then(message => {const res = JSON.parse(message)
         setErro22(res?.error_msg)
+        if (res.error_msg) {
+          setloading(false)
+          setsucess(true)
+          setHairStyle("")
+          setHairColour("black")
+        }
         if (res.task_status == 1) {
           getData()
         }
@@ -278,7 +284,7 @@ className="cursor-pointer flex lg:hidden pr-[0.5rem]"
 
 
 </div>
-<div className=" flex items-center justify-center lg:left-[23%] lg:top-[50%] left-[40%] top-[30%] absolute">
+<div className=" flex items-center justify-center lg:left-[30%] lg:top-[50%] left-[40%] top-[30%] absolute">
       { loading == true ? <Loader/>  : Erro22 ? "" : "" }
 </div>
 <div className={  display.first ?   "hidden" : data22 ? "hidden" : loading ? "hidden" : " w-full items-center justify-end  flex flex-col gap-[1rem] "}>
