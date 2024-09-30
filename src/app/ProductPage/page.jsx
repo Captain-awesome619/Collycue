@@ -64,10 +64,8 @@ const Page = () => {
     fetch(LINK, requestOptions)
       .then(response => response.text())
       .then(result => {  response = JSON.parse(result)
-
         console.log(response)
          setvalue22(response.task_id)
-
          setupload22(true)
          setFile22("")
         console.log(value22)
@@ -113,10 +111,10 @@ const Page = () => {
     useEffect(() => {
         getHair()
       }, []);
+
       useEffect(() => {
         let timer
         if (upload22) {
-
          timer = setTimeout(()=>{
             getData()
           },4000)
@@ -129,11 +127,14 @@ const Page = () => {
         .then(data => { let sample = data
           SetHair(sample) })
         .catch(error => console.error(error));}
+
 function handleClick(name,name2) {
 SetState(name),
 SetLabel(name2)}
+
 const fileInput = useRef(null)
 const picInput = useRef(null)
+
 const handleClick2 = event => {
   if (!hairstyle) {
     alert('PLEASE PICK AN HAIRTYLE')
@@ -190,13 +191,9 @@ setupload(false)
 setHairStyle("")
   setHairColour("")
 }
-
-let firstopt
   return (
 <div className='flex flex-col  lg:flex-row gap-[rem] lg:gap-[3rem]  items-center lg:items-start  justify-center  mt-[2rem]'>
-
 { options == true ?
-
 <FaArrowLeftLong
 size={30}
 color='green'
@@ -211,8 +208,7 @@ className="cursor-pointer hidden lg:flex  ml-[1rem]"
 />
 </Link>
 }
-
-{ compare == true ? <div   className=" flex items-center justify-center">
+{compare == true ? <div   className=" flex items-center justify-center">
 <div className="lg:w-full w-screen h-full relative" onPointerUp={handleMouseUp} onMouseUp={handleMouseUp}>
       <div
         className="relative  m-auto overflow-hidden select-none lg:w-[500px] bg-[#D9D9D9]  w-[80%] h-[350px]  lg:h-[517px]"
@@ -220,7 +216,6 @@ className="cursor-pointer hidden lg:flex  ml-[1rem]"
         onMouseDown={handleMouseDown}
 onPointerDown={handleMouseDown}
 onPointerMove={handleMove}>
-
 <div
           className={"absolute top-0 left-0 right-0 w-full aspect-[50/80] lg:w-[500px] lg:h-[517px] m-auto overflow-hidden select-none"}
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
@@ -230,8 +225,6 @@ onPointerMove={handleMove}>
     backgroundRepeat: 'no-repeat'}}>
 </div>
         </div>
-
-
        <div  className={ `lg:aspect-[50/80] aspect-[70/80] lg:w-[500px] lg:h-[517px]   flex `  }  style={display.second? {  backgroundImage : `url("${display.second}")`, backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',} : {backgroundImage : `url("${url.concat(State[0].imageUrl)}")`, backgroundSize: 'cover',
@@ -312,13 +305,10 @@ className="cursor-pointer mb-[0.5rem]"
 }
 {console.log(file22)}
 </div>
-
 </div>
 <h3 className={options == true ? "font-Gelasio  hidden absolute w-[30%] text-center text-[16px] text-red-600 font-bold mb-[1rem] lg:flex items-center justify-center" : "hidden"}>{Erro22}</h3>
 </div>
-
 }
-
 <h3 className={options == true ? "font-Gelasio text-[14px] lg:hidden  text-center lg:text-[16px] w-[80%] text-red-600 font-bold my-[1rem] flex items-center justify-center" : "hidden"}>{Erro22}</h3>
 {options == false ?
 <div className="flex flex-col mt-[2rem] lg:mt-[0rem] gap-[1rem] items-center justify-center w-[100%]">
@@ -345,10 +335,8 @@ onClick={Reset}
       src ={ url.concat(contents[0].imageUrl) }
       alt="model"
       className="rounded-md cursor-pointer h-[100px] w-[100px] lg:w-[160px] lg:h-[160px]"/>
-
 <h3 className={labell === contents[0].hairstyle ? "text-[14px] font-Lato font-bold text-black" :  " text-[14px] font-Lato font-bold text-gray-400"}>{contents[0].hairstyle}</h3>
 </button>
-
 </div>
 )
   )}
@@ -439,11 +427,9 @@ onClick={ResetAll}/>
             </select>
 
           </div>
-
 </div>
 
 }
-
     </div>
   )
 }

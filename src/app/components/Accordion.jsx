@@ -1,6 +1,5 @@
 "use client"
 import React, { useState } from "react";
-import { IoMdArrowDropup } from "react-icons/io";
 import { MdArrowDropDown } from "react-icons/md";
 const Accordion = ({ title, answer }) => {
   const [accordionOpen, setAccordionOpen] = useState(false);

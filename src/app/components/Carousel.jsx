@@ -1,10 +1,8 @@
 "use client"
 import React,{useState,useRef} from 'react'
 import CarouselData from './CarouselData'
-import Image from 'next/image'
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
-import Loading from './loading';
 import { motion, useScroll } from 'framer-motion';
 const Carousel = () => {
   const [View,SetView] = useState(1)
@@ -24,7 +22,7 @@ const { scrollYProgress } = useScroll({
 });
   return (
     <motion.div className="flex flex-col gap-[2rem]"
-  
+
  >
     <h2 className="font-Gelasio font-semibold text-[18px] lg:text-[24px]  text-primary3 text-center">Try On Hair-Styles Virtually With Just 3 Easy Steps</h2>
     <div className="w-screen h-max  lg:pb-0">

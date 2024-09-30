@@ -2,7 +2,6 @@
 import React,{useState} from 'react'
 import Image from 'next/image'
 import model from "../../../public/assests/display1.png"
-import { CiCamera } from "react-icons/ci";
 import model2 from "../../../public/assests/display2.png"
 import model3 from "../../../public/assests/display3.png"
 import { IoCameraOutline } from "react-icons/io5";

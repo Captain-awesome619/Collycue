@@ -1,6 +1,6 @@
 import React from 'react'
 import Accordion from './Accordion'
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 const Faq = () => {
   return (
     <motion.div
